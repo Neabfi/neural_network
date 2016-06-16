@@ -1,0 +1,11 @@
+language: python
+python:
+- '3.5'
+deploy:
+  provider: pypi
+  user: Neabfi
+  password:
+    secure: XUUa3uLrb+pkpkE22uhUNMoJc/7ZzXX7zXhQbWSPRbseoIqTAcaNMdJ5iA2KRRUEgOqdTdOsqyMy2LmNh9inEqZjnyMK19hC8jniXHqU+S24qxWfphf0wJbQHMEOhKMiyWNodvr/UGeRqKUCeJ6NkiXELDG0ExARrevLts21C3UoY1mtTm+4TxMD58qCZJp4mA+JpIYUdcZPp/La/6veJalslA0ASWr4Bv68FdroMDN/EO904+TNby4X+x4OEo1fwTU4aWq8+s4JB+rHAF5qyM94dX0JbZE0hn3dW4IC5ZBO3Hf6FQ1MW8yqg9ejrw31zzAkO8lU09Rru5CNP6ZHDXAt2rwwj3bcIhR0oq57p1ZKU91EDXjpHPpvMuZehJX1b9QFtX7lDVKFpb1J3+DOYkAlt7A7TWV6Qn5fwTp+SVZUNxJ/v/WSj/7qr8cig5ES/i+QOken+2H5tZhO8yf9AOrF/+2l4MZmxr2Sg0yRgWlUBVXLlcyzyv5cjX1D7XTx69kbHQgLCmxaaMooKSlLs/PnPdwtd3kWL/XKY6gEeHGPxcs1Q7IfXX9AVEbfa0DBGH+bMzcNpk5DN0P1MZ/nsp8jAE9AzNtfVg47KABtWRK4EoMkCmj1t6rlGAm/XElxiTXVJtFsi61Wzr0EnLrC14EcnWEoqCOAQl5wi2eNi38=
+  on:
+    tags: true
+    branch: master
