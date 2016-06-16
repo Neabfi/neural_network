@@ -1,6 +1,9 @@
+sudo: required
 language: python
 python:
-- '3.5'
+  - '3.5'
+install:
+  - pip install codecov
 deploy:
   provider: pypi
   user: Neabfi
@@ -9,7 +12,7 @@ deploy:
   on:
     tags: true
     branch: master
-script: nosetests
+script:
+  - nosetests
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-sudo: required
