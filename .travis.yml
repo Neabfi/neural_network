@@ -10,4 +10,6 @@ deploy:
     tags: true
     branch: master
 script: nosetests
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 sudo: required
