@@ -9,4 +9,5 @@ deploy:
   on:
     tags: true
     branch: master
+script: nosetests
 sudo: required
