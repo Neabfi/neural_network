@@ -3,7 +3,7 @@ language: python
 python:
   - '3.5'
 install:
-  - pip install codecov
+  - pip install codecov coverage
 deploy:
   provider: pypi
   user: Neabfi
@@ -13,6 +13,6 @@ deploy:
     tags: true
     branch: master
 script:
-  - nosetests
+  - nosetests --with-coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)
