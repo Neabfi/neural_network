@@ -9,6 +9,13 @@ class Neuron:
         for i in range(numOutputs):
             self.outputWeights.append(random.random()*2-1 if not inherit else inherit[i])
 
+    def __str__(self):
+        string = ""
+        for weight in self.outputWeights:
+            string += str(weight) + " "
+        return string
+
+
     def feedForward(self, prevLayer):
         sum = 0.0
         for i in range(len(prevLayer)):

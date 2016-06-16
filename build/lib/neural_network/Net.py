@@ -25,6 +25,14 @@ class Net:
         self.normalizeInputs = [(-1, 1)] * topology[0]
         self.normalizeOutputs = [(-1, 1)] * topology[-1]
 
+    def __str__(self):
+        string = ""
+        for layer in self.layers[:-1]:
+            for neuron in layer:
+                string += neuron.__str__() + "\n"
+            string += "--------\n"
+        return string
+
     def setInputsRange(self, minValue, maxValue, inputs=None):
         if inputs == None:
             inputs = [i for i in range(self.topology[0])]
