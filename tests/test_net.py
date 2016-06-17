@@ -14,7 +14,7 @@ def test_net():
     net2.feedForward([50, 0.5])
 
 def test_geneticNet():
-    nets = {}
+    nets = []
     for i in range(10):
         nets.append(Net([2, 3, 4]))
     genetic = GeneticNet(nets)
