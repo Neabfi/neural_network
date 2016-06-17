@@ -6,7 +6,7 @@ class GeneticNet:
         if not isinstance(nets,list) and all(isinstance(net, Net) for net in nets):
             raise TypeError('Parameter must be a list of Net.')
         self.nets = nets
-        self.selection = 'roulette'
+        self.selection = 'rank'
         self.numParents = 4
         self.r = 2
         self.mutationRate = 0.5
@@ -17,8 +17,8 @@ class GeneticNet:
             return []
         select = []
         for _ in range(self.numParents):
-            if self.selection == 'roulette':
-                select.append(self.rouletteWheelSelection())
+            if self.selection == 'wheel':
+                select.append(self.wheelSelection())
             elif self.selection == 'rank':
                 select.append(self.rankSelection())
             else:
@@ -28,7 +28,7 @@ class GeneticNet:
         toto =  self.mutation(self.crossover(select))
         return toto
 
-    def rouletteWheelSelection(self):
+    def wheelSelection(self):
         sum = 0
         for net in self.nets:
             sum += net.fitness+1
