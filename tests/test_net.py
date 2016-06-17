@@ -18,3 +18,6 @@ def test_geneticNet():
     for i in range(10):
         nets.append(Net([2, 3, 4]))
     genetic = GeneticNet(nets)
+    genetic.reproduction()
+    genetic.selection = 'wheel'
+    genetic.reproduction()
