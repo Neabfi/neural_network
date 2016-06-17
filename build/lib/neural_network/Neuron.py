@@ -15,7 +15,6 @@ class Neuron:
             string += str(weight) + " "
         return string
 
-
     def feedForward(self, prevLayer):
         sum = 0.0
         for i in range(len(prevLayer)):
