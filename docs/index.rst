@@ -1,14 +1,34 @@
+:github_url: https://github.com/Neabfi/neural_network
+
 .. neural_network documentation master file, created by
    sphinx-quickstart on Sat Jun 18 00:22:31 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-neural_network documentation
-==========================================
+neural_network
+**************
 
-First you need to include the module:
+*neural_network* allows you to create simple Neural Networks and to use genetic algorithm.
 
-`from neural_network import *`
+The code is open source, and available on `github <https://github.com/Neabfi/neural_network>`_.
+
+
+Installation
+=============
+
+The simplest way to install neural_network is using pip:
+
+.. code-block:: bash
+
+ pip install neural_network
+
+
+Usage
+======
+
+First you need to include the module::
+
+  from neural_network import *
 
 To create a new neural network, you need to instantiate the Net class.
 
@@ -18,16 +38,24 @@ net will be a neural network with 3 layers.
 2 neurons on its input layer, 3 neurons on its hidden layer and 2 neurons on its outputs layer.
 You can create as many layer you want.
 
-Contents:
+Documentation
+=============
+
+.. module:: neural_network
+
+Net
+-------
+
+.. autoclass:: Net
+    :members:
+
+GeneticNet
+------------
+
+.. autoclass:: GeneticNet
+    :members:
+
+
 
 .. toctree::
    :maxdepth: 2
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

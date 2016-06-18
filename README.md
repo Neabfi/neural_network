@@ -24,6 +24,10 @@ net will be a neural network with 3 layers.
 2 neurons on its input layer, 3 neurons on its hidden layer and 2 neurons on its outputs layer.
 You can create as many layer you want.
 
+## Documentation
+
+For more informations please read the [documentation](http://neural-network.readthedocs.io/).
+
 ## Contributing
 
 1. Fork it!

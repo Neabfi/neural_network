@@ -2,6 +2,17 @@ import random
 import math
 
 class GeneticNet:
+    """
+        Gentic algorithm class
+
+        :param array nets: Array of neural networks
+
+        :Exemple:
+            >>> nets = []
+            >>> for i in range(10):
+            ...     nets.append(Net([2, 3, 3]))
+            >>> alg = GeneticNet(nets)
+    """
     def __init__(self, nets):
         if not isinstance(nets,list) and all(isinstance(net, Net) for net in nets):
             raise TypeError('Parameter must be a list of Net.')

@@ -1,6 +1,15 @@
 from .Neuron import *
 
 class Net:
+    """
+        Net class represent a neural network.
+
+        :param array topology: An array representing the number of neurons on each layer
+        :param inherit: The parent network. Default: None
+
+        :Exemple:
+            >>> net = Net([2, 1, 2])
+    """
     def __init__(self, topology, inherit=None):
         if inherit:
             total = 0
@@ -34,12 +43,18 @@ class Net:
         return string
 
     def setInputsRange(self, minValue, maxValue, inputs=None):
+        """
+            Allow you to define the inputs range
+        """
         if inputs == None:
             inputs = [i for i in range(self.topology[0])]
         for index in inputs:
             self.normalizeInputs[index] = (minValue, maxValue)
 
     def setOutputsRange(self, minValue, maxValue, outputs=None):
+        """
+            Allow you to define the outputs range
+        """
         if outputs == None:
             outputs = [i for i in range(self.topology[-1])]
         for index in outputs:
@@ -64,6 +79,18 @@ class Net:
         return (((value - self.oMin) * self.nRange) / float(self.oRange)) + self.nMin
 
     def feedForward(self, inputs):
+        """
+            Calculate the outputs
+
+            :param array inputs: neural network's imputs
+            :return: neural network's outputs
+            :rtype: array
+
+            :Exemple:
+                >>> net = Net([2, 2])
+                >>> net.feedForward([0.5, 0.2])
+                [0.37993674654431087, -0.4970740393560804]
+        """
         if len(inputs) != len(self.layers[0]) - 1:
             raise ValueError('The number of inputs doesn\'t match.')
         for i, input in enumerate(inputs):
