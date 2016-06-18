@@ -44,7 +44,17 @@ class Net:
 
     def setInputsRange(self, minValue, maxValue, inputs=None):
         """
-            Allow you to define the inputs range
+            Allow you to define the inputs range.
+
+            :param float minValue: Minimum value for the inputs
+            :param float maxValue: Maximum value for the inputs
+            :param array inputs: Array of input's index affected by setInputsRange
+
+            :Exemple:
+                >>> net = Net([2, 3])
+                >>> net.setInputsRange(0, 100, [0]) # Changing input range just for the first input
+                >>> net.feedForward([0.5, 50])
+                [-1.0, 0.9999999999997584, 0.9941092385245458]
         """
         if inputs == None:
             inputs = [i for i in range(self.topology[0])]
@@ -53,7 +63,17 @@ class Net:
 
     def setOutputsRange(self, minValue, maxValue, outputs=None):
         """
-            Allow you to define the outputs range
+            Allow you to define the inputs range.
+
+            :param float minValue: Minimum value for the outputs
+            :param float maxValue: Maximum value for the outputs
+            :param array outputs: Array of ouput's index affected by setOutputsRange
+
+            :Exemple:
+                >>> net = Net([2, 3])
+                >>> net.setOutputsRange(0, 100) # Changing ouput range for all the outputs
+                >>> net.feedForward([0.5, 0.2])
+                [39.4994636910904, 50.68911915764991, 59.771121155018555]
         """
         if outputs == None:
             outputs = [i for i in range(self.topology[-1])]
