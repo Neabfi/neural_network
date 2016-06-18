@@ -1,2 +1,2 @@
-from .Net import *
-from .GeneticNet import *
+from .neuralNetwork import *
+from .geneticForNet import *

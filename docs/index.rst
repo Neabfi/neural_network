@@ -24,7 +24,7 @@ The simplest way to install neural_network is using pip:
 Usage
 ======
 
-First you need to include the module::
+First you need to include modules::
 
   from neural_network import *
 
@@ -41,14 +41,14 @@ Documentation
 
 .. module:: neural_network
 
-Net
--------
+neuralNetwork
+--------------
 
 .. autoclass:: Net
     :members:
 
-GeneticNet
-------------
+geneticForNet
+--------------
 
 .. autoclass:: GeneticNet
     :members:
