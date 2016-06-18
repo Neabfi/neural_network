@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/Neabfi/neural_network/branch/master/graph/badge.svg)](https://codecov.io/gh/Neabfi/neural_network)
 
 
-Just a simple Neural Network
+*neural_network* allows you to create simple Neural Networks and to use genetic algorithm.
 
 ## Installation
 
