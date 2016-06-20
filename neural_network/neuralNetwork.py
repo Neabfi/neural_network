@@ -2,12 +2,12 @@ import random
 import math
 
 class Neuron:
-    def __init__(self, numOutputs, index, inherit=None):
+    def __init__(self, numOutputs, index):
         self.index = index
         self.value = 0
         self.outputWeights = []
         for i in range(numOutputs):
-            self.outputWeights.append(random.random()*2-1 if not inherit else inherit[i])
+            self.outputWeights.append(random.random()*2-1)
 
     def __str__(self):
         string = ""
@@ -28,22 +28,14 @@ class Net:
     """
         Net class represent a neural network.
 
-        :param array topology: An array representing the number of neurons on each layer
-        :param inherit: The parent network. Default: None
+        :param *int topology: Integers representing the number of neurons on each layer
 
         :Exemple:
-            >>> net = Net([2, 1, 2])
+            >>> net = Net(2, 1, 2)
     """
-    def __init__(self, topology, inherit=None):
-        if inherit:
-            total = 0
-            for i in range(len(topology)-1):
-                if i == len(topology)-1:
-                    total += (topology[i]+1) * (topology[i+1]+1)
-                else:
-                    total += (topology[i]+1) * topology[i+1]
-            if total != len(inherit):
-                raise ValueError('Inherit must containe ' + str(total) + ' datas instead of ' + str(len(inherit)))
+    def __init__(self, *topology):
+        if(len(topology) < 2):
+            raise ValueError('Net must containe at least 2 layers.')
         self.topology = topology
         self.numLayer = len(topology)
         self.layers = []
@@ -51,9 +43,7 @@ class Net:
         for i in range(len(topology)):
             self.layers.append([])
             for j in range(self.topology[i]+1):
-                self.layers[i].append(Neuron(0 if self.numLayer == i + 1 else self.topology[i+1], j, None if not inherit or self.numLayer == i + 1 else inherit[:self.topology[i+1]]))
-                if inherit:
-                    inherit = inherit[self.topology[i+1]:]
+                self.layers[i].append(Neuron(0 if self.numLayer == i + 1 else self.topology[i+1], j))
             self.layers[i][j-1].value = 1.0
         self.normalizeInputs = [(-1, 1)] * topology[0]
         self.normalizeOutputs = [(-1, 1)] * topology[-1]
