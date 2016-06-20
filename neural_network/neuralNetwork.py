@@ -65,7 +65,7 @@ class Net:
             :param array inputs: Array of input's index affected by setInputsRange
 
             :Exemple:
-                >>> net = Net([2, 3])
+                >>> net = Net(2, 3)
                 >>> net.setInputsRange(0, 100, [0]) # Changing input range just for the first input
                 >>> net.feedForward([0.5, 50])
                 [-1.0, 0.9999999999997584, 0.9941092385245458]
@@ -84,7 +84,7 @@ class Net:
             :param array outputs: Array of ouput's index affected by setOutputsRange
 
             :Exemple:
-                >>> net = Net([2, 3])
+                >>> net = Net(2, 3)
                 >>> net.setOutputsRange(0, 100) # Changing ouput range for all the outputs
                 >>> net.feedForward([0.5, 0.2])
                 [39.4994636910904, 50.68911915764991, 59.771121155018555]
@@ -112,17 +112,16 @@ class Net:
         self.nRange = (self.nMax - self.nMin)
         return (((value - self.oMin) * self.nRange) / float(self.oRange)) + self.nMin
 
-    def feedForward(self, inputs):
+    def feedForward(self, *inputs):
         """
             Calculate the outputs
 
-            :param array inputs: neural network's imputs
+            :param *float inputs: neural network's imputs
             :return: neural network's outputs
-            :rtype: array
 
             :Exemple:
-                >>> net = Net([2, 2])
-                >>> net.feedForward([0.5, 0.2])
+                >>> net = Net(2, 2)
+                >>> net.feedForward(0.5, 0.2)
                 [0.37993674654431087, -0.4970740393560804]
         """
         if len(inputs) != len(self.layers[0]) - 1:

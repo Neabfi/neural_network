@@ -30,7 +30,7 @@ First you need to include modules::
 
 To create a new neural network, you need to instantiate the Net class.
 
-`net = Net([2, 3, 2])`
+`net = Net(2, 3, 2)`
 
 net will be a neural network with 3 layers.
 2 neurons on its input layer, 3 neurons on its hidden layer and 2 neurons on its outputs layer.

@@ -5,13 +5,13 @@ def test_net():
     net1.setInputsRange(0, 100)
     net1.setOutputsRange(0, 100)
     print(net1)
-    net1.feedForward([50, 0, 80])
+    net1.feedForward(50, 0, 80)
 
     net2 = Net(2, 2)
     net2.setInputsRange(0, 100, [0])
     net2.setOutputsRange(0, 100, [0])
     print(net2)
-    net2.feedForward([50, 0.5])
+    net2.feedForward(50, 0.5)
 
 def test_geneticNet():
     nets = []
@@ -19,5 +19,5 @@ def test_geneticNet():
         nets.append(Net(2, 3, 4))
     genetic = GeneticNet(nets)
     genetic.reproduction()
-    genetic.selection = 'wheel'
+    genetic.setSelection('wheel')
     genetic.reproduction()

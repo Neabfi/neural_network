@@ -23,6 +23,23 @@ class GeneticNet:
         self.mutationRate = 0.5
         self.gaussCoef = 0.5
 
+    def setSelection(self, selectionStr):
+        """
+            Set the selection process
+
+            :param string inputs: name of the selection process ('rank' or 'wheel')
+
+            :Exemple:
+                >>> net = Net(2, 2)
+                >>> net.setSelection('rank')
+        """
+        if selectionStr == 'wheel':
+            self.selection == 'wheel'
+        elif selectionStr == 'rank':
+            self.selection == 'rank'
+        else:
+            raise ValueError('Selection\'s name: ' + str(selectionStr) + ' unknown.')
+
     def reproduction(self):
         if len(self.nets) == 0:
             return []
